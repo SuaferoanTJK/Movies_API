@@ -1,13 +1,33 @@
 @use "../base/variables" as v;
 @use "../base/mixins" as m;
+
 .nav {
   padding: 1.8rem 1.4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include m.tabletMed {
+    padding: 2.4rem 2.4rem;
+  }
+  &_logo {
+    img {
+      width: 2.5rem;
+      @include m.tabletMed {
+        width: 3.2rem;
+      }
+    }
+  }
   &_links {
     display: flex;
     gap: 2.4rem;
+  }
+  &_link {
+    img {
+      width: 1.6rem;
+      @include m.tabletMed {
+        width: 2rem;
+      }
+    }
   }
   &_profile {
     border: 0.18rem solid v.$white;
@@ -15,6 +35,10 @@
     img {
       width: 2.4rem;
       height: 2.4rem;
+      @include m.tabletMed {
+        width: 3.2rem;
+        height: 3.2rem;
+      }
     }
   }
 }

@@ -2,10 +2,20 @@
 @use "../base/mixins" as m;
 @use "../base/global" as g;
 
+.home {
+  @include m.tabletMed {
+    padding-top: 2.3rem;
+  }
+}
 .navbar {
   @include m.tabletMed {
     width: 95%;
     max-width: 144rem;
     margin: 0 auto;
+  }
+}
+.bg_navbar {
+  @include m.tabletMed {
+    border-radius: 1rem;
   }
 }
