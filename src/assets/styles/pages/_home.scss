@@ -1,2 +1,11 @@
 @use "../base/variables" as v;
 @use "../base/mixins" as m;
+@use "../base/global" as g;
+
+.navbar {
+  @include m.tabletMed {
+    width: 95%;
+    max-width: 144rem;
+    margin: 0 auto;
+  }
+}

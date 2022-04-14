@@ -4,8 +4,9 @@
   text-align: center;
 }
 .bg {
+  min-height: 100vh;
   background-color: v.$background;
-  &_sidebar {
+  &_navbar {
     background-color: v.$bgSidebar;
   }
 }

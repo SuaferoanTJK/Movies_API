@@ -1,0 +1,20 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+.nav {
+  padding: 1.8rem 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &_links {
+    display: flex;
+    gap: 2.4rem;
+  }
+  &_profile {
+    border: 0.18rem solid v.$white;
+    border-radius: 100%;
+    img {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+}
