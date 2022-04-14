@@ -1,0 +1,27 @@
+@use "variables" as v;
+
+@mixin tabletMed {
+  @media (min-width: v.$tabletMed) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: v.$tablet) {
+    @content;
+  }
+}
+@mixin desktopMed {
+  @media (min-width: v.$desktopMed) {
+    @content;
+  }
+}
+@mixin desktopBig {
+  @media (min-width: v.$desktopBig) {
+    @content;
+  }
+}
+@mixin grid($columnas, $espaciado) {
+  display: grid;
+  grid-template-columns: repeat($columnas, 1fr);
+  gap: $espaciado;
+}

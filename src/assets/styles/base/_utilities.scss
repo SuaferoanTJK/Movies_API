@@ -1,0 +1,20 @@
+@use 'variables' as v;
+
+.text-center{
+    text-align: center;
+}
+.bg-primario{
+    background-color:v.$backgroundLM;
+}
+.bg-secundaria{
+    background-color:v.$backgroundDM;
+}
+.margin-negativo-10{
+    margin-top: -10rem;
+}
+.text-white{
+    color:v.$white;
+}
+.text-dark{
+    color:v.$verydarkblueLM;
+}
