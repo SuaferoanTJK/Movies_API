@@ -11,9 +11,12 @@
       font-size: 3.2rem;
     }
   }
-  &_cards {
-    display: flex;
-    gap: 4rem;
-    z-index: 10;
+}
+
+.swiper {
+  cursor: pointer;
+  &-slide,
+  &-slide-active {
+    width: fit-content;
   }
 }
