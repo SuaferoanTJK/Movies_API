@@ -8,18 +8,17 @@ export const changePage = (payload) => {
   };
 };
 
-export const getMovies = (param) => {
+export const getMovies = (trending = true, filter, value) => {
   return async (dispatch) => {
-    const movies = await obtainMovies(param);
+    const movies = await obtainMovies(filter, value);
     dispatch({
       type: GET_MOVIES,
       payload: movies,
     });
-  };
-};
-
-export const getTrending = () => {
-  return {
-    type: GET_TRENDING,
+    if (trending) {
+      dispatch({
+        type: GET_TRENDING,
+      });
+    }
   };
 };

@@ -1,10 +1,12 @@
 import axios from "axios";
 
-const obtainMovies = async (param) => {
+const obtainMovies = async (filter = "", value = "") => {
   let movies = [];
-  const url = `http://localhost:4000/movies/`;
+  let url = "http://localhost:4000/movies";
+  if (filter !== "") {
+    url = `http://localhost:4000/movies/?${filter}=${value}`;
+  }
   await axios.get(url).then((response) => {
-    console.log(response);
     if (response.status === 200) {
       movies = response.data;
     } else {
