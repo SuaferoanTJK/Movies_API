@@ -5,17 +5,18 @@
   @include m.tabletMed {
     padding-top: 2.3rem;
   }
-}
-.grid {
-  @include m.desktopMed {
-    display: grid;
-    grid-template-columns: 10rem auto;
-    gap: 1rem;
-    width: 95%;
-    max-width: 144rem;
-    margin: 0 auto;
+  &_grid {
+    @include m.desktopMed {
+      display: grid;
+      grid-template-columns: 10rem auto;
+      gap: 1rem;
+      width: 95%;
+      max-width: 144rem;
+      margin: 0 auto;
+    }
   }
 }
+
 .navbar {
   @include m.tabletMed {
     width: 95%;
@@ -23,6 +24,7 @@
     margin: 0 auto;
   }
 }
+
 .bg_navbar {
   @include m.tabletMed {
     border-radius: 1rem;

@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 const Layout = ({ children }) => {
   return (
     <div className="layout bg text">
-      <div className="grid">
+      <div className="layout_grid">
         <div className="navbar bg_navbar">
           <Navbar />
         </div>
