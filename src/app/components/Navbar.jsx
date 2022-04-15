@@ -1,24 +1,66 @@
 import React from "react";
 import Icons from "./Icons";
+import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { changePage } from "../redux/actions/moviesActions";
 
 const Navbar = () => {
+  let navigate = useNavigate();
+  const dispatch = useDispatch();
+  const page = useSelector((state) => state.page);
+
   return (
     <div className="nav">
       <div className="nav_logo">
-        <img src={Icons.Logo} alt="logo" />
+        <img
+          src={Icons.Logo}
+          alt="Logo"
+          onClick={() => {
+            dispatch(changePage("home"));
+            navigate("/");
+          }}
+        />
       </div>
       <div className="nav_links">
-        <div className="nav_link">
-          <img src={Icons.NavHome} alt="Home" />
+        <div className={page === "home" ? "nav_link active" : "nav_link"}>
+          <img
+            src={Icons.NavHome}
+            alt="Home Link"
+            onClick={() => {
+              dispatch(changePage("home"));
+              navigate("/");
+            }}
+          />
         </div>
-        <div className="nav_link">
-          <img src={Icons.NavMovies} alt="Home" />
+        <div className={page === "movies" ? "nav_link active" : "nav_link"}>
+          <img
+            src={Icons.NavMovies}
+            alt="Movies Link"
+            onClick={() => {
+              dispatch(changePage("movies"));
+              navigate("/movies");
+            }}
+          />
         </div>
-        <div className="nav_link">
-          <img src={Icons.NavSeries} alt="Home" />
+        <div className={page === "series" ? "nav_link active" : "nav_link"}>
+          <img
+            src={Icons.NavSeries}
+            alt="Series Link"
+            onClick={() => {
+              dispatch(changePage("series"));
+              navigate("/series");
+            }}
+          />
         </div>
-        <div className="nav_link">
-          <img src={Icons.NavBookmark} alt="Home" />
+        <div className={page === "bookmark" ? "nav_link active" : "nav_link"}>
+          <img
+            src={Icons.NavBookmark}
+            alt="Bookmark Link"
+            onClick={() => {
+              dispatch(changePage("bookmark"));
+              navigate("/Bookmark");
+            }}
+          />
         </div>
       </div>
       <div className="nav_profile">
