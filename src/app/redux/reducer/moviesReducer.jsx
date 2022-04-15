@@ -1,7 +1,9 @@
-import { CHANGE_PAGE } from "../types/moviesTypes";
+import { CHANGE_PAGE, GET_MOVIES, GET_TRENDING } from "../types/moviesTypes";
 
 const initialState = {
   page: "home",
+  movies: [],
+  trending: [],
 };
 
 export const moviesAPI = (state = initialState, action) => {
@@ -10,6 +12,19 @@ export const moviesAPI = (state = initialState, action) => {
       return {
         ...state,
         page: action.payload,
+      };
+    case GET_MOVIES:
+      return {
+        ...state,
+        movies: action.payload,
+      };
+    case GET_TRENDING:
+      const isTrending = state.movies.filter(
+        (movie) => movie.isTrending === true
+      );
+      return {
+        ...state,
+        trending: isTrending,
       };
     default:
       return state;

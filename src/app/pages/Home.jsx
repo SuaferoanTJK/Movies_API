@@ -3,16 +3,32 @@ import CardTrending from "../components/Cards/CardTrending";
 import Layout from "../layout/Layout";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { useDispatch, useSelector } from "react-redux";
+import { getMovies, getTrending } from "../redux/actions/moviesActions";
 
 const Home = () => {
   let slides = 1;
   const [windowWidth, setWindowWidth] = useState(0);
-
+  const dispatch = useDispatch();
+  const movies = useSelector((state) => state.movies);
+  const trending = useSelector((state) => state.trending);
   useEffect(() => {
     updateDimensions();
     window.addEventListener("resize", updateDimensions);
     return () => window.removeEventListener("resize", updateDimensions);
   }, []);
+
+  useEffect(() => {
+    dispatch(getMovies());
+  }, []);
+  useEffect(() => {
+    if (movies.length === 0) {
+      return null;
+    } else {
+      dispatch(getTrending());
+    }
+  }, [movies]);
+
   const updateDimensions = () => {
     setWindowWidth(window.innerWidth);
   };
@@ -36,21 +52,11 @@ const Home = () => {
             onSlideChange={() => console.log("slide change")}
             className="home_swipe"
           >
-            <SwiperSlide>
-              <CardTrending />
-            </SwiperSlide>
-            <SwiperSlide>
-              <CardTrending />
-            </SwiperSlide>
-            <SwiperSlide>
-              <CardTrending />
-            </SwiperSlide>
-            <SwiperSlide>
-              <CardTrending />
-            </SwiperSlide>
-            <SwiperSlide>
-              <CardTrending />
-            </SwiperSlide>
+            {trending.map((movie, index) => (
+              <SwiperSlide key={index}>
+                <CardTrending {...movie} />
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </div>
