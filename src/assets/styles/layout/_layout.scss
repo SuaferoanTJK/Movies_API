@@ -13,6 +13,7 @@
       width: 95%;
       max-width: 144rem;
       margin: 0 auto;
+      min-height: 200vh;
     }
   }
 }
@@ -31,5 +32,6 @@
   }
   @include m.desktopMed {
     border-radius: 2rem;
+    height: 95vh;
   }
 }
