@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "server": "json-server --watch data.json --port 4000"
+    "server": "json-server --watch db.json --port 4000"
   },
   "dependencies": {
     "axios": "^0.26.1",
