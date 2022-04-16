@@ -1,5 +1,12 @@
-import { CHANGE_PAGE, GET_MOVIES, GET_TRENDING } from "../types/moviesTypes";
-import obtainMovies from "./services/obtainMovies";
+import {
+  CHANGE_PAGE,
+  GET_ALL,
+  GET_TRENDING,
+  GET_MOVIES,
+  GET_TV_SERIES,
+  GET_BOOKMARKS,
+} from "../types/moviesTypes";
+import obtainAll from "./services/obtainAll";
 
 export const changePage = (payload) => {
   return {
@@ -8,17 +15,34 @@ export const changePage = (payload) => {
   };
 };
 
-export const getMovies = (trending = true, filter, value) => {
+export const getAll = (filter, value) => {
   return async (dispatch) => {
-    const movies = await obtainMovies(filter, value);
+    const data = await obtainAll(filter, value);
+    dispatch({
+      type: GET_ALL,
+      payload: data,
+    });
+  };
+};
+
+export const initialArrays = () => {
+  return async (dispatch) => {
+    const data = await obtainAll("", "");
+    dispatch({
+      type: GET_ALL,
+      payload: data,
+    });
+    dispatch({
+      type: GET_TRENDING,
+    });
     dispatch({
       type: GET_MOVIES,
-      payload: movies,
     });
-    if (trending) {
-      dispatch({
-        type: GET_TRENDING,
-      });
-    }
+    dispatch({
+      type: GET_TV_SERIES,
+    });
+    dispatch({
+      type: GET_BOOKMARKS,
+    });
   };
 };

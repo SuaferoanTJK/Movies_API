@@ -1,9 +1,19 @@
-import { CHANGE_PAGE, GET_MOVIES, GET_TRENDING } from "../types/moviesTypes";
+import {
+  CHANGE_PAGE,
+  GET_ALL,
+  GET_TRENDING,
+  GET_MOVIES,
+  GET_TV_SERIES,
+  GET_BOOKMARKS,
+} from "../types/moviesTypes";
 
 const initialState = {
   page: "home",
-  movies: [],
+  all: [],
   trending: [],
+  movies: [],
+  series: [],
+  bookmark: [],
 };
 
 export const moviesAPI = (state = initialState, action) => {
@@ -13,18 +23,42 @@ export const moviesAPI = (state = initialState, action) => {
         ...state,
         page: action.payload,
       };
-    case GET_MOVIES:
+    case GET_ALL:
       return {
         ...state,
-        movies: action.payload,
+        all: action.payload,
       };
     case GET_TRENDING:
-      const isTrending = state.movies.filter(
-        (movie) => movie.isTrending === true
+      const isTrending = state.all.filter(
+        (element) => element.isTrending === true
       );
       return {
         ...state,
         trending: isTrending,
+      };
+    case GET_MOVIES:
+      const isMovie = state.all.filter(
+        (element) => element.category === "Movie"
+      );
+      return {
+        ...state,
+        movies: isMovie,
+      };
+    case GET_TV_SERIES:
+      const isSerie = state.all.filter(
+        (element) => element.category === "TV Series"
+      );
+      return {
+        ...state,
+        series: isSerie,
+      };
+    case GET_BOOKMARKS:
+      const isBookmarked = state.all.filter(
+        (element) => element.isBookmarked === true
+      );
+      return {
+        ...state,
+        bookmark: isBookmarked,
       };
     default:
       return state;

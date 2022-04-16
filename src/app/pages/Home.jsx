@@ -4,7 +4,7 @@ import Layout from "../layout/Layout";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel } from "swiper";
 import { useDispatch, useSelector } from "react-redux";
-import { getMovies } from "../redux/actions/moviesActions";
+import { initialArrays } from "../redux/actions/moviesActions";
 import "swiper/css";
 
 const Home = () => {
@@ -12,8 +12,12 @@ const Home = () => {
   const movies = useSelector((state) => state.movies);
   const trending = useSelector((state) => state.trending);
 
+  const array = movies.map((movie) => movie);
+
   useEffect(() => {
-    dispatch(getMovies());
+    if (array.length === 0) {
+      dispatch(initialArrays());
+    }
   }, []);
 
   return (
@@ -23,6 +27,7 @@ const Home = () => {
         <div className="home_cards">
           <Swiper
             modules={[Mousewheel]}
+            spaceBetween={15}
             loop={true}
             mousewheel={true}
             breakpoints={{

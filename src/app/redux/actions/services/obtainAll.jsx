@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const obtainMovies = async (filter = "", value = "") => {
+const obtainAll = async (filter = "", value = "") => {
   let movies = [];
   let url = "http://localhost:4000/movies";
   if (filter !== "") {
@@ -16,4 +16,4 @@ const obtainMovies = async (filter = "", value = "") => {
   return movies;
 };
 
-export default obtainMovies;
+export default obtainAll;
