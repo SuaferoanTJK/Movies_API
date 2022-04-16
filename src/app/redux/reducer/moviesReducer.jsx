@@ -1,4 +1,5 @@
 import {
+  GET_INITIAL_PAGE,
   CHANGE_PAGE,
   GET_ALL,
   GET_TRENDING,
@@ -8,7 +9,7 @@ import {
 } from "../types/moviesTypes";
 
 const initialState = {
-  page: "home",
+  page: "",
   all: [],
   trending: [],
   movies: [],
@@ -18,6 +19,11 @@ const initialState = {
 
 export const moviesAPI = (state = initialState, action) => {
   switch (action.type) {
+    case GET_INITIAL_PAGE:
+      return {
+        ...state,
+        page: action.payload,
+      };
     case CHANGE_PAGE:
       return {
         ...state,

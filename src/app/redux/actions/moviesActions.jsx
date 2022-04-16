@@ -1,4 +1,5 @@
 import {
+  GET_INITIAL_PAGE,
   CHANGE_PAGE,
   GET_ALL,
   GET_TRENDING,
@@ -7,6 +8,13 @@ import {
   GET_BOOKMARKS,
 } from "../types/moviesTypes";
 import obtainAll from "./services/obtainAll";
+
+export const getInitialPage = (payload) => {
+  return {
+    type: GET_INITIAL_PAGE,
+    payload,
+  };
+};
 
 export const changePage = (payload) => {
   return {

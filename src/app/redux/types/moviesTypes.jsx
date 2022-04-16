@@ -1,3 +1,4 @@
+export const GET_INITIAL_PAGE = "GET_INITIAL_PAGE";
 export const CHANGE_PAGE = "CHANGE_PAGE";
 export const GET_ALL = "GET_ALL";
 export const GET_TRENDING = "GET_TRENDING";
