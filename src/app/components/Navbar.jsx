@@ -1,8 +1,8 @@
 import React from "react";
-import Icons from "./Icons";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { changePage } from "../redux/actions/moviesActions";
+import Icons from "./Icons";
 
 const Navbar = () => {
   let navigate = useNavigate();

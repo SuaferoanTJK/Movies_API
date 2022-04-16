@@ -1,10 +1,10 @@
 import React from "react";
-import CardTrending from "../components/Cards/CardTrending";
-import Layout from "../layout/Layout";
+import { useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel } from "swiper";
+import Layout from "../layout/Layout";
 import InitialData from "../utils/InitialData";
-import { useSelector } from "react-redux";
+import CardTrending from "../components/Cards/CardTrending";
 import "swiper/css";
 
 const Home = () => {
