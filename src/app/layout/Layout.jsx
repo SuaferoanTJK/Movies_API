@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
         <div className="navbar bg_navbar">
           <Navbar />
         </div>
-        <div className="container">
+        <div className="layout_container">
           <Input />
           {children}
         </div>

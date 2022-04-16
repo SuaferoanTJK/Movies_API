@@ -1,0 +1,22 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.home {
+  &_title {
+    margin: 0;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    font-size: 2rem;
+    @include m.tabletMed {
+      font-size: 3.2rem;
+    }
+  }
+}
+
+.swiper {
+  cursor: pointer;
+  &-slide,
+  &-slide-active {
+    width: fit-content;
+  }
+}

@@ -2,18 +2,23 @@
 @use "../base/mixins" as m;
 
 .layout {
+  overflow: hidden;
   @include m.tabletMed {
     padding-top: 2.3rem;
+  }
+  &_container {
+    width: 95%;
+    max-width: 155rem;
+    margin: 0 auto;
   }
   &_grid {
     @include m.desktopMed {
       display: grid;
       grid-template-columns: 10rem auto;
-      gap: 1rem;
       width: 95%;
-      max-width: 144rem;
+      max-width: 192rem;
       margin: 0 auto;
-      min-height: 200vh;
+      min-height: 100vh;
     }
   }
 }
