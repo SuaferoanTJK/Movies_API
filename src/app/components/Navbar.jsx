@@ -16,7 +16,7 @@ const Navbar = () => {
           src={Icons.Logo}
           alt="Logo"
           onClick={() => {
-            dispatch(changePage("home"));
+            dispatch(changePage("/"));
             navigate("/");
           }}
         />
