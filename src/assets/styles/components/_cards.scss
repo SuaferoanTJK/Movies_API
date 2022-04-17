@@ -29,6 +29,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    &:hover {
+      img {
+        filter: invert(1);
+      }
+      background-color: v.$white;
+    }
   }
   &_button {
     opacity: 0;

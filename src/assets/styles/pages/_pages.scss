@@ -3,6 +3,9 @@
 
 .page {
   margin-bottom: 5rem;
+  &_gap {
+    margin-bottom: 4.7rem;
+  }
   &_title {
     margin: 0;
     margin-bottom: 2.5rem;
@@ -12,7 +15,6 @@
       font-size: 3.2rem;
     }
     &-sub {
-      margin-top: 4.7rem;
       margin-bottom: 3rem;
     }
   }

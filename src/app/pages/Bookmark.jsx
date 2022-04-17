@@ -23,18 +23,29 @@ const Bookmark = () => {
       <div className="page">
         {searchData.length === 0 ? (
           <>
-            <h2 className="page_title">Bookmarked Movies</h2>
-            <div className="grid ">
-              {bookmarkMovies.map((movie, index) => (
-                <Card key={index} {...movie} />
-              ))}
-            </div>
-            <h2 className="page_title page_title-sub">Bookmarked TV Series</h2>
-            <div className="grid ">
-              {bookmarkSeries.map((movie, index) => (
-                <Card key={index} {...movie} />
-              ))}
-            </div>
+            {bookmarkMovies.length !== 0 && (
+              <div className="page_gap">
+                <h2 className="page_title">Bookmarked Movies</h2>
+                <div className="grid ">
+                  {bookmarkMovies.map((movie, index) => (
+                    <Card key={index} {...movie} />
+                  ))}
+                </div>{" "}
+              </div>
+            )}
+            {bookmarkSeries.length !== 0 && (
+              <>
+                <h2 className="page_title">Bookmarked TV Series</h2>
+                <div className="grid ">
+                  {bookmarkSeries.map((movie, index) => (
+                    <Card key={index} {...movie} />
+                  ))}
+                </div>{" "}
+              </>
+            )}
+            {bookmarkSeries.length === 0 && bookmarkMovies.length === 0 ? (
+              <h2 className="page_title">There are no bookmarks</h2>
+            ) : null}
           </>
         ) : (
           <SearchResult />
