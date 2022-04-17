@@ -30,6 +30,7 @@ export const moviesAPI = (state = initialState, action) => {
       return {
         ...state,
         page: action.payload,
+        search: [],
       };
     case GET_ALL:
       return {
