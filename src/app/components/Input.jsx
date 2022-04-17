@@ -12,7 +12,6 @@ const Input = () => {
         className="searchFilter_btn"
         onClick={() => {
           dispatch(searchData(search));
-          console.log(`Request endpoint by click: ${search}`);
         }}
       >
         <img src={Icons.IconSearch} alt="Search Icon" />
@@ -26,7 +25,7 @@ const Input = () => {
         }}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
-            console.log(`Request endpoint by enter key: ${search}`);
+            dispatch(searchData(search));
           }
         }}
       />

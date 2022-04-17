@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getInitialPage, initialArrays } from "../redux/actions/moviesActions";
+import { getData, getInitialPage } from "../redux/actions/moviesActions";
 
 const InitialData = () => {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const InitialData = () => {
 
   useEffect(() => {
     if (array.length === 0) {
-      dispatch(initialArrays());
+      dispatch(getData());
     }
   }, []);
 };

@@ -1,14 +1,10 @@
 import {
   GET_INITIAL_PAGE,
   CHANGE_PAGE,
-  GET_ALL,
-  GET_TRENDING,
-  GET_MOVIES,
-  GET_TV_SERIES,
-  GET_BOOKMARKS,
+  GET_DATA,
   SEARCH,
 } from "../types/moviesTypes";
-import obtainAll from "./services/obtainAll";
+import obtainData from "./services/obtainData";
 
 export const getInitialPage = (payload) => {
   return {
@@ -24,44 +20,22 @@ export const changePage = (payload) => {
   };
 };
 
-export const getAll = (value) => {
+export const getData = (value) => {
   return async (dispatch) => {
-    const data = await obtainAll(value);
+    const data = await obtainData(value);
     dispatch({
-      type: GET_ALL,
+      type: GET_DATA,
       payload: data,
-    });
-  };
-};
-
-export const initialArrays = () => {
-  return async (dispatch) => {
-    const data = await obtainAll("");
-    dispatch({
-      type: GET_ALL,
-      payload: data,
-    });
-    dispatch({
-      type: GET_TRENDING,
-    });
-    dispatch({
-      type: GET_MOVIES,
-    });
-    dispatch({
-      type: GET_TV_SERIES,
-    });
-    dispatch({
-      type: GET_BOOKMARKS,
     });
   };
 };
 
 export const searchData = (value) => {
   return async (dispatch) => {
-    const data = await obtainAll(value);
+    const search = await obtainData(value);
     dispatch({
       type: SEARCH,
-      payload: data,
+      payload: search,
     });
   };
 };

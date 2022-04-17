@@ -2,7 +2,7 @@ import axios from "axios";
 
 const baseURL = "https://movies-api-server-tjk.herokuapp.com/movies";
 
-const obtainAll = async (value = "") => {
+const obtainData = async (value = "") => {
   let movies = [];
   let url = baseURL;
   if (value !== "") {
@@ -18,4 +18,4 @@ const obtainAll = async (value = "") => {
   return movies;
 };
 
-export default obtainAll;
+export default obtainData;

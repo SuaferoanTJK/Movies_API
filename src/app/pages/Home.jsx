@@ -10,11 +10,12 @@ import "swiper/css";
 
 const Home = () => {
   InitialData();
-  const trending = useSelector((state) => state.trending);
-  const all = useSelector((state) => state.all);
+  const data = useSelector((state) => state.all);
   const searchData = useSelector((state) => state.search);
 
-  const homeData = all.filter((movie) => movie.isTrending !== true);
+  const trending = data.filter((movie) => movie.isTrending === true);
+  const notTrending = data.filter((movie) => movie.isTrending !== true);
+
   return (
     <Layout>
       <div className="home">
@@ -46,7 +47,7 @@ const Home = () => {
             </div>
             <h2 className="home_title home_title-sub"> Recommended for you</h2>
             <div className="grid ">
-              {homeData.map((movie, index) => (
+              {notTrending.map((movie, index) => (
                 <Card key={index} {...movie} />
               ))}
             </div>
