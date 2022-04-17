@@ -13,6 +13,8 @@ const Home = () => {
   const trending = useSelector((state) => state.trending);
   const all = useSelector((state) => state.all);
   const searchData = useSelector((state) => state.search);
+
+  const homeData = all.filter((movie) => movie.isTrending !== true);
   return (
     <Layout>
       <div className="home">
@@ -44,7 +46,7 @@ const Home = () => {
             </div>
             <h2 className="home_title home_title-sub"> Recommended for you</h2>
             <div className="grid ">
-              {all.map((movie, index) => (
+              {homeData.map((movie, index) => (
                 <Card key={index} {...movie} />
               ))}
             </div>
