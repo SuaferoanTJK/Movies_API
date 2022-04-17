@@ -1,22 +1,27 @@
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
-import Home from "./pages/Home";
-import Movies from "./pages/Movies";
-import Series from "./pages/Series";
-import Bookmark from "./pages/Bookmark";
 import store from "./redux/store";
+import Spinner from "./components/Spinner";
 import "./App.scss";
+
+const Home = lazy(() => import("./pages/Home"));
+const Movies = lazy(() => import("./pages/Movies"));
+const Series = lazy(() => import("./pages/Series"));
+const Bookmark = lazy(() => import("./pages/Bookmark"));
 
 function App() {
   return (
     <BrowserRouter>
       <Provider store={store}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/movies" element={<Movies />} />
-          <Route path="/series" element={<Series />} />
-          <Route path="/bookmark" element={<Bookmark />} />
-        </Routes>
+        <Suspense fallback={<Spinner />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/movies" element={<Movies />} />
+            <Route path="/series" element={<Series />} />
+            <Route path="/bookmark" element={<Bookmark />} />
+          </Routes>
+        </Suspense>
       </Provider>
     </BrowserRouter>
   );
