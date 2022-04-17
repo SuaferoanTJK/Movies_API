@@ -58,7 +58,7 @@ const Navbar = () => {
             alt="Bookmark Link"
             onClick={() => {
               dispatch(changePage("/bookmark"));
-              navigate("/Bookmark");
+              navigate("/bookmark");
             }}
           />
         </div>
