@@ -1,9 +1,15 @@
 import React from "react";
 import Icons from "../Icons";
 import { IconsCard } from "../../utils/IconCard";
+import { useDispatch, useSelector } from "react-redux";
+import { changeBookmark } from "../../redux/actions/moviesActions";
 
 const CardTrending = (props) => {
   const iconsCard = IconsCard(props.category, props.isBookmarked);
+
+  const dispatch = useDispatch();
+  const all = useSelector((state) => state.all);
+  const allArray = all.map((element) => element);
 
   return (
     <>
@@ -16,7 +22,12 @@ const CardTrending = (props) => {
         <div
           className="card_bookmark"
           onClick={() => {
-            console.log("Bookmark changed");
+            const newArray = allArray.map((element) =>
+              element.title === props.title
+                ? { ...element, isBookmarked: !props.isBookmarked }
+                : element
+            );
+            dispatch(changeBookmark(newArray));
           }}
         >
           {iconsCard.iconBookmark}

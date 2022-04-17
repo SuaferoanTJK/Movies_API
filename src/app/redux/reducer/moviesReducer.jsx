@@ -3,6 +3,7 @@ import {
   CHANGE_PAGE,
   GET_DATA,
   SEARCH,
+  CHANGE_BOOKMARK,
 } from "../types/moviesTypes";
 
 const initialState = {
@@ -33,6 +34,11 @@ export const moviesAPI = (state = initialState, action) => {
       return {
         ...state,
         search: action.payload,
+      };
+    case CHANGE_BOOKMARK:
+      return {
+        ...state,
+        all: action.payload,
       };
     default:
       return state;

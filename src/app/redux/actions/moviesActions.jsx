@@ -3,6 +3,7 @@ import {
   CHANGE_PAGE,
   GET_DATA,
   SEARCH,
+  CHANGE_BOOKMARK,
 } from "../types/moviesTypes";
 import obtainData from "./services/obtainData";
 
@@ -37,5 +38,12 @@ export const searchData = (value) => {
       type: SEARCH,
       payload: search,
     });
+  };
+};
+
+export const changeBookmark = (payload) => {
+  return {
+    type: CHANGE_BOOKMARK,
+    payload,
   };
 };
