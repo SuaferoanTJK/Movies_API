@@ -5,8 +5,8 @@
     @content;
   }
 }
-@mixin tablet {
-  @media (min-width: v.$tablet) {
+@mixin tabletSmall {
+  @media (min-width: v.$tabletSmall) {
     @content;
   }
 }
@@ -20,8 +20,8 @@
     @content;
   }
 }
-@mixin grid($columnas, $espaciado) {
+@mixin grid($columns, $spacing) {
   display: grid;
-  grid-template-columns: repeat($columnas, 1fr);
-  gap: $espaciado;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $spacing;
 }

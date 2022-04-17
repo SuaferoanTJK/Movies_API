@@ -1,9 +1,9 @@
 import { applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
-/* import { countriesAPI } from "./reducer/countriesReducer";
- */
+import { moviesAPI } from "./reducer/moviesReducer";
+
 export default createStore(
-  /*   countriesAPI, */
+  moviesAPI,
   composeWithDevTools(applyMiddleware(thunk))
 );

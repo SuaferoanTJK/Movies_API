@@ -1,0 +1,38 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.page {
+  margin-bottom: 5rem;
+  &_gap {
+    margin-bottom: 4.7rem;
+  }
+  &_title {
+    margin: 0;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    font-size: 2rem;
+    @include m.tabletMed {
+      font-size: 3.2rem;
+    }
+    &-sub {
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+.swiper {
+  cursor: pointer;
+  &-slide,
+  &-slide-active {
+    width: fit-content;
+  }
+}
+.grid {
+  @include m.grid(2, 1rem);
+  @include m.tabletMed {
+    @include m.grid(3, 1rem);
+  }
+  @include m.desktopMed {
+    @include m.grid(4, 3rem);
+  }
+}

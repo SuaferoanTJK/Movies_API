@@ -1,0 +1,69 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.nav {
+  padding: 1.8rem 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include m.tabletMed {
+    padding: 2.4rem 2.4rem;
+  }
+  @include m.desktopMed {
+    flex-direction: column;
+    height: 95vh;
+    padding: 3.5rem 1.4rem;
+  }
+  img {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &_logo {
+    flex-grow: 1;
+    img {
+      width: 2.5rem;
+      @include m.tabletMed {
+        width: 3.2rem;
+      }
+    }
+  }
+  &_links {
+    flex-grow: 1;
+    display: flex;
+    gap: 2.4rem;
+    @include m.desktopMed {
+      flex-direction: column;
+      flex-grow: 7;
+      gap: 4rem;
+    }
+  }
+  &_link {
+    img {
+      width: 1.6rem;
+      @include m.tabletMed {
+        width: 2rem;
+      }
+      &:hover {
+        filter: invert(53%) sepia(67%) saturate(6201%) hue-rotate(337deg)
+          brightness(111%) contrast(111%);
+      }
+    }
+  }
+  &_profile {
+    border: 0.18rem solid v.$white;
+    border-radius: 100%;
+    img {
+      width: 2.4rem;
+      height: 2.4rem;
+      @include m.tabletMed {
+        width: 3.2rem;
+        height: 3.2rem;
+      }
+    }
+  }
+}
+
+.active {
+  filter: brightness(0) invert(1);
+}

@@ -1,0 +1,38 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.searchFilter {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 2.6rem;
+  height: 8rem;
+  &_btn {
+    margin-right: 1.4rem;
+    img {
+      width: 2.4rem;
+      @include m.tabletMed {
+        width: 3.2rem;
+      }
+    }
+  }
+  &_input {
+    background: transparent;
+    width: 90%;
+    border: none;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: v.$white;
+    padding-bottom: 1.6rem;
+    @include m.tabletMed {
+      font-size: 2.4rem;
+    }
+    &::placeholder {
+      color: v.$gray;
+    }
+    &:focus,
+    &:active {
+      outline: none;
+      border-bottom: 0.1rem solid v.$buttonDisabled;
+    }
+  }
+}

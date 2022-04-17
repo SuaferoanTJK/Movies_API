@@ -1,18 +1,19 @@
 // Fuentes
-$fuentePrincipal: "Nunito", sans-serif;
+$font: "Outfit", sans-serif;
 
 // Media Queries
-$tabletMed: 480px;
-$tablet: 768px;
-$desktopBig: 1440px;
+$tabletSmall: 480px;
+$tabletMed: 768px;
 $desktopMed: 1024px;
+$desktopBig: 1440px;
+
 // Colores
-$darkblueDM: hsl(209, 23%, 22%);
-$backgroundDM: hsl(207, 26%, 17%);
-$verydarkblueLM: hsl(200, 15%, 8%);
-$darkgreyLM: hsl(0, 0%, 52%);
-$backgroundLM: hsl(0, 0%, 98%);
+$background: hsl(225, 29%, 5%);
+$bgSidebar: hsl(223, 36%, 14%);
+$buttonRed: hsl(0, 97%, 63%);
+$buttonDisabled: hsl(223, 23%, 46%);
 $white: hsl(0, 0%, 100%);
+$gray: hsl(225, 3%, 77%);
 
 // Unidades
 $separacion: 5rem;
