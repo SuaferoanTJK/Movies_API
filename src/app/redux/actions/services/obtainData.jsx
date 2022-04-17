@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "https://movies-api-server-tjk.herokuapp.com/movies";
+const baseURL = "http://localhost:4000/movies";
 
 const obtainData = async (value = "") => {
   let movies = [];
