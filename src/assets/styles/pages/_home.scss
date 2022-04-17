@@ -10,6 +10,10 @@
     @include m.tabletMed {
       font-size: 3.2rem;
     }
+    &-sub {
+      margin-top: 4.7rem;
+      margin-bottom: 3rem;
+    }
   }
 }
 
@@ -18,5 +22,14 @@
   &-slide,
   &-slide-active {
     width: fit-content;
+  }
+}
+.grid {
+  @include m.grid(2, 1rem);
+  @include m.tabletMed {
+    @include m.grid(3, 1rem);
+  }
+  @include m.desktopMed {
+    @include m.grid(4, 3rem);
   }
 }

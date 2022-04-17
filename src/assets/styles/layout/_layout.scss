@@ -14,7 +14,7 @@
   &_grid {
     @include m.desktopMed {
       display: grid;
-      grid-template-columns: 10rem auto;
+      grid-template-columns: 10rem 90%;
       width: 95%;
       max-width: 192rem;
       margin: 0 auto;

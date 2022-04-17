@@ -6,6 +6,7 @@ import {
   GET_MOVIES,
   GET_TV_SERIES,
   GET_BOOKMARKS,
+  SEARCH,
 } from "../types/moviesTypes";
 
 const initialState = {
@@ -15,6 +16,7 @@ const initialState = {
   movies: [],
   series: [],
   bookmark: [],
+  search: [],
 };
 
 export const moviesAPI = (state = initialState, action) => {
@@ -65,6 +67,11 @@ export const moviesAPI = (state = initialState, action) => {
       return {
         ...state,
         bookmark: isBookmarked,
+      };
+    case SEARCH:
+      return {
+        ...state,
+        search: action.payload,
       };
     default:
       return state;

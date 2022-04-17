@@ -6,11 +6,11 @@ export const IconsCard = (category, bookmark) => {
 
   if (category === "Movie") {
     iconCategory = (
-      <img className="card_image" src={Icons.NavMovies} alt="Icon Movie" />
+      <img className="card_icon" src={Icons.NavMovies} alt="Icon Movie" />
     );
   } else if (category === "TV Series") {
     iconCategory = (
-      <img className="card_image" src={Icons.NavSeries} alt="Icon TV Series" />
+      <img className="card_icon" src={Icons.NavSeries} alt="Icon TV Series" />
     );
   }
 

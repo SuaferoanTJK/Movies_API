@@ -2,11 +2,11 @@ import axios from "axios";
 
 const baseURL = "https://movies-api-server-tjk.herokuapp.com/movies";
 
-const obtainAll = async (filter = "", value = "") => {
+const obtainAll = async (value = "") => {
   let movies = [];
   let url = baseURL;
-  if (filter !== "") {
-    url = `${baseURL}/?${filter}=${value}`;
+  if (value !== "") {
+    url = `${baseURL}/?q=${value}`;
   }
   await axios.get(url).then((response) => {
     if (response.status === 200) {

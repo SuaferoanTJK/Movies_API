@@ -6,6 +6,7 @@ import {
   GET_MOVIES,
   GET_TV_SERIES,
   GET_BOOKMARKS,
+  SEARCH,
 } from "../types/moviesTypes";
 import obtainAll from "./services/obtainAll";
 
@@ -23,9 +24,9 @@ export const changePage = (payload) => {
   };
 };
 
-export const getAll = (filter, value) => {
+export const getAll = (value) => {
   return async (dispatch) => {
-    const data = await obtainAll(filter, value);
+    const data = await obtainAll(value);
     dispatch({
       type: GET_ALL,
       payload: data,
@@ -35,7 +36,7 @@ export const getAll = (filter, value) => {
 
 export const initialArrays = () => {
   return async (dispatch) => {
-    const data = await obtainAll("", "");
+    const data = await obtainAll("");
     dispatch({
       type: GET_ALL,
       payload: data,
@@ -51,6 +52,16 @@ export const initialArrays = () => {
     });
     dispatch({
       type: GET_BOOKMARKS,
+    });
+  };
+};
+
+export const searchData = (value) => {
+  return async (dispatch) => {
+    const data = await obtainAll(value);
+    dispatch({
+      type: SEARCH,
+      payload: data,
     });
   };
 };

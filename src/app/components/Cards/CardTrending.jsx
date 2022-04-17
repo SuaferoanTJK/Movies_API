@@ -9,12 +9,12 @@ const CardTrending = (props) => {
     <>
       <div className="cardT">
         <img
-          className="cardT_image"
+          className="card_image"
           src={props.thumbnail.trending.large}
           alt="card image"
         />
         <div
-          className="cardT_bookmark"
+          className="card_bookmark"
           onClick={() => {
             console.log("Bookmark changed");
           }}
