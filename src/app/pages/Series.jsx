@@ -13,10 +13,10 @@ const Series = () => {
 
   return (
     <Layout>
-      <div className="home">
+      <div className="page">
         {searchData.length === 0 ? (
           <>
-            <h2 className="home_title">Series</h2>
+            <h2 className="page_title">Series</h2>
             <div className="grid ">
               {series.map((movie, index) => (
                 <Card key={index} {...movie} />
@@ -25,7 +25,7 @@ const Series = () => {
           </>
         ) : (
           <>
-            <h2 className="home_title">
+            <h2 className="page_title">
               {`Found ${searchData.length} results`}
             </h2>
             <div className="grid ">

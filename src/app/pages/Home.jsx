@@ -18,11 +18,11 @@ const Home = () => {
 
   return (
     <Layout>
-      <div className="home">
+      <div className="page">
         {searchData.length === 0 ? (
           <>
-            <h2 className="home_title">Trending</h2>
-            <div className="home_cards">
+            <h2 className="page_title">Trending</h2>
+            <div className="page_cards">
               <Swiper
                 modules={[Mousewheel]}
                 spaceBetween={15}
@@ -45,7 +45,7 @@ const Home = () => {
                 ))}
               </Swiper>
             </div>
-            <h2 className="home_title home_title-sub"> Recommended for you</h2>
+            <h2 className="page_title page_title-sub"> Recommended for you</h2>
             <div className="grid ">
               {notTrending.map((movie, index) => (
                 <Card key={index} {...movie} />
@@ -54,7 +54,7 @@ const Home = () => {
           </>
         ) : (
           <>
-            <h2 className="home_title">
+            <h2 className="page_title">
               {`Found ${searchData.length} results`}
             </h2>
             <div className="grid ">

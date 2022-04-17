@@ -19,16 +19,16 @@ const Bookmark = () => {
 
   return (
     <Layout>
-      <div className="home">
+      <div className="page">
         {searchData.length === 0 ? (
           <>
-            <h2 className="home_title">Bookmarked Movies</h2>
+            <h2 className="page_title">Bookmarked Movies</h2>
             <div className="grid ">
               {bookmarkMovies.map((movie, index) => (
                 <Card key={index} {...movie} />
               ))}
             </div>
-            <h2 className="home_title home_title-sub">Bookmarked TV Series</h2>
+            <h2 className="page_title page_title-sub">Bookmarked TV Series</h2>
             <div className="grid ">
               {bookmarkSeries.map((movie, index) => (
                 <Card key={index} {...movie} />
@@ -37,7 +37,7 @@ const Bookmark = () => {
           </>
         ) : (
           <>
-            <h2 className="home_title">
+            <h2 className="page_title">
               {`Found ${searchData.length} results`}
             </h2>
             <div className="grid ">
