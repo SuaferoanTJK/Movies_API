@@ -6,6 +6,7 @@ import Layout from "../layout/Layout";
 import InitialData from "../utils/InitialData";
 import CardTrending from "../components/Cards/CardTrending";
 import Card from "../components/Cards/Card";
+import SearchResult from "../components/SearchResult";
 import "swiper/css";
 
 const Home = () => {
@@ -53,16 +54,7 @@ const Home = () => {
             </div>
           </>
         ) : (
-          <>
-            <h2 className="page_title">
-              {`Found ${searchData.length} results`}
-            </h2>
-            <div className="grid ">
-              {searchData.map((movie, index) => (
-                <Card key={index} {...movie} />
-              ))}
-            </div>
-          </>
+          <SearchResult />
         )}
       </div>
     </Layout>
