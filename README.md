@@ -10,7 +10,7 @@ This application displays the data receive from a json file to simulate an enter
 To install this project follow the next steps:
 1.  Download the repository found here: [GitHub Repository](https://github.com/SuaferoanTJK/Movies_API)
 2.  Run **npm install** script
-3.  Run **npm run server** script to raise the database.
+3.  Run **npm run server** script to raise the database server.
 4.  Run **npm run dev** script to raise the development server.
 5.  Visit **localhost:3000**.
 
