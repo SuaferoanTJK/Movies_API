@@ -46,7 +46,7 @@ const Home = () => {
                 ))}
               </Swiper>
             </div>
-            <h2 className="page_title page_title-sub"> Recommended for you</h2>
+            <h2 className="page_title page_title-sub">Recommended for you</h2>
             <div className="grid ">
               {notTrending.map((movie, index) => (
                 <Card key={index} {...movie} />
